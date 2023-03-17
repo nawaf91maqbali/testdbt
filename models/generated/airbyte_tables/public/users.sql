@@ -28,6 +28,10 @@
 {{ config(
    post_hook="ALTER TABLE {{ this }} ADD isAdded bool default false"
 ) }}
+
+{{ config(
+   post_hook="ALTER TABLE {{ this }} DROP COLUMN _airbyte_ab_id, _airbyte_emitted_at, _airbyte_normalized_at, _airbyte_users_hashid"
+) }}
 -- Final base SQL model
 -- depends_on: {{ ref('users_ab3') }}
 select
