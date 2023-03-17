@@ -22,7 +22,7 @@
 ) }}
 
 {{ config(
-   post_hook="ALTER TABLE {{ this }} Rename my_users"
+   post_hook="RENAME {{ this }} TO my_users"
 ) }}
 
 {{ config(
