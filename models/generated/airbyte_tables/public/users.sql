@@ -20,12 +20,12 @@
                         "],
     tags = [ "top-level" ]
 ) }}
+
+{{ config(
+   post_hook=“UPDATE {{ this }} SET mobile='93508063'”
+) }}
 -- Final base SQL model
 -- depends_on: {{ ref('users_ab3') }}
-update {{ ref('users_ab3') }}
-set mobile = '93508063'
-where 1 = 1
-
 select
     {{ adapter.quote('id') }},
     email as user_email,
