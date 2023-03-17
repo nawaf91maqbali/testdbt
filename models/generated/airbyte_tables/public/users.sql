@@ -21,18 +21,17 @@
     tags = [ "top-level" ]
 ) }}
 
-{{ config(
-   post_hook="ALTER TABLE {{ this }} RENAME TO my_users"
-) }}
-
+-- update value of column in the table
 {{ config(
    post_hook="UPDATE {{ this }} SET user_mobile='93508063'"
 ) }}
 
+-- add new column to the table
 {{ config(
    post_hook="ALTER TABLE {{ this }} ADD isAdded bool default false"
 ) }}
 
+-- remove column from the table
 {{ config(
    post_hook="ALTER TABLE {{ this }} DROP COLUMN _airbyte_ab_id"
 ) }}
@@ -44,6 +43,11 @@
 ) }}
 {{ config(
    post_hook="ALTER TABLE {{ this }} DROP COLUMN _airbyte_users_hashid"
+) }}
+
+-- rename the name of the table
+{{ config(
+   post_hook="ALTER TABLE {{ this }} RENAME TO my_users"
 ) }}
 -- Final base SQL model
 -- depends_on: {{ ref('users_ab3') }}
