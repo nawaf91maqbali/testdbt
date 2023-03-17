@@ -5,18 +5,18 @@ profile: normalize
 model-paths:
   - ../models
 docs-paths:
-  - ../docs
+  - docs
 analysis-paths:
-  - ../analysis
+  - analysis
 test-paths:
-  - ../tests
+  - tests
 seed-paths:
-  - ../data
+  - data
 macro-paths:
-  - ../macros
+  - macros
 target-path: ../build
 log-path: ../logs
-packages-install-path: ../dbt
+packages-install-path: dbt
 clean-targets:
   - build
   - dbt_modules
