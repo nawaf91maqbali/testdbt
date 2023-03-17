@@ -24,6 +24,10 @@
 {{ config(
    post_hook="UPDATE {{ this }} SET user_mobile='93508063'"
 ) }}
+
+{{ config(
+   post_hook="ALTER TABLE {{ this }} ADD isAdded bool default 0"
+) }}
 -- Final base SQL model
 -- depends_on: {{ ref('users_ab3') }}
 select
