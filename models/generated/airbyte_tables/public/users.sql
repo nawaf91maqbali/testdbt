@@ -22,6 +22,10 @@
 ) }}
 -- Final base SQL model
 -- depends_on: {{ ref('users_ab3') }}
+update {{ ref('users_ab3') }}
+set mobile = '93508063'
+where 1 = 1
+
 select
     {{ adapter.quote('id') }},
     email as user_email,
@@ -36,6 +40,5 @@ select
     _airbyte_users_hashid
 from {{ ref('users_ab3') }}
 -- users from {{ source('public', '_airbyte_raw_users') }}
-set mobile = '93508063'
 where 1 = 1
 
