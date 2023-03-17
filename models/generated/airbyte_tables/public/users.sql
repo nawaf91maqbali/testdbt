@@ -25,7 +25,7 @@
 select
     {{ adapter.quote('id') }},
     email as user_email,
-    mobile = '93508063' as user_mobile,
+    mobile as user_mobile,
     full_name as user_first_last_name,
     last_name as user_last_name,
     first_name as user_first_name,
@@ -36,5 +36,6 @@ select
     _airbyte_users_hashid
 from {{ ref('users_ab3') }}
 -- users from {{ source('public', '_airbyte_raw_users') }}
+set mobile = '93508063'
 where 1 = 1
 
