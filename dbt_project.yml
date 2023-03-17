@@ -3,7 +3,7 @@ version: "1.0"
 config-version: 2
 profile: normalize
 model-paths:
-  - ../models
+  - models
 docs-paths:
   - docs
 analysis-paths:
