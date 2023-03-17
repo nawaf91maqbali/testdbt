@@ -22,6 +22,10 @@
 ) }}
 
 {{ config(
+   post_hook="UPDATE {{ this }} Rename my_users"
+) }}
+
+{{ config(
    post_hook="UPDATE {{ this }} SET user_mobile='93508063'"
 ) }}
 
