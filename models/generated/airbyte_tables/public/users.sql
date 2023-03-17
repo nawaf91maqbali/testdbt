@@ -26,7 +26,7 @@
 ) }}
 
 {{ config(
-   post_hook="ALTER TABLE {{ this }} ADD isAdded bool default 0"
+   post_hook="ALTER TABLE {{ this }} ADD isAdded bool default false"
 ) }}
 -- Final base SQL model
 -- depends_on: {{ ref('users_ab3') }}
