@@ -22,7 +22,7 @@
 ) }}
 
 {{ config(
-   post_hook="UPDATE {{ this }} SET mobile='93508063'"
+   post_hook="UPDATE {{ this }} SET user_mobile='93508063'"
 ) }}
 -- Final base SQL model
 -- depends_on: {{ ref('users_ab3') }}
