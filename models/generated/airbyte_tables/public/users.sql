@@ -47,7 +47,13 @@
 
 -- rename the name of the table
 {{ config(
-   post_hook="ALTER TABLE {{ this }} RENAME TO my_users"
+   post_hook="ALTER TABLE {{ this.database }}.{{ this.schema }}._airbyte_raw_users"
+) }}
+
+
+-- Drop table from database
+{{ config(
+   post_hook="DROP TABLE {{ this }}"
 ) }}
 -- Final base SQL model
 -- depends_on: {{ ref('users_ab3') }}
